@@ -12,7 +12,7 @@ interface QuoteData {
 export default function RandomMovieQuote({ count }: RandomMovieQuoteProps) {
   const [randomQuotes, setRandomQuotes] = useState<QuoteData[]>([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/${count}`)
+    fetch(`${process.env.REACT_APP_API}/quotes/${count}`)
       .then(response => response.json())
       .then(data => setRandomQuotes(data));
   }, [count]);
