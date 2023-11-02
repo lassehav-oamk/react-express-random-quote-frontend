@@ -15,7 +15,7 @@ export default function RandomMovieQuote({ count }: RandomMovieQuoteProps) {
     fetch(`http://localhost:3001/quotes/${count}`)
       .then(response => response.json())
       .then(data => setRandomQuotes(data));
-  }, []);
+  }, [count]);
 
 
   return (
